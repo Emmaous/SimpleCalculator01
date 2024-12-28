@@ -153,7 +153,6 @@ namespace SimpleCalculator01 {
 			this->btn_clear->TabIndex = 1;
 			this->btn_clear->Text = L"Clear";
 			this->btn_clear->UseVisualStyleBackColor = true;
-			this->btn_clear->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// btn_plusOper
 			// 
@@ -165,6 +164,7 @@ namespace SimpleCalculator01 {
 			this->btn_plusOper->TabIndex = 4;
 			this->btn_plusOper->Text = L"+";
 			this->btn_plusOper->UseVisualStyleBackColor = true;
+			this->btn_plusOper->Click += gcnew System::EventHandler(this, &MyForm::EnterOperator);
 			// 
 			// btn_C
 			// 
@@ -210,6 +210,7 @@ namespace SimpleCalculator01 {
 			this->btn_minusOper->TabIndex = 4;
 			this->btn_minusOper->Text = L"-";
 			this->btn_minusOper->UseVisualStyleBackColor = true;
+			this->btn_minusOper->Click += gcnew System::EventHandler(this, &MyForm::EnterOperator);
 			// 
 			// btn09
 			// 
@@ -257,6 +258,7 @@ namespace SimpleCalculator01 {
 			this->btn_multiOper->TabIndex = 4;
 			this->btn_multiOper->Text = L"*";
 			this->btn_multiOper->UseVisualStyleBackColor = true;
+			this->btn_multiOper->Click += gcnew System::EventHandler(this, &MyForm::EnterOperator);
 			// 
 			// btn06
 			// 
@@ -304,7 +306,7 @@ namespace SimpleCalculator01 {
 			this->btn_divOper->TabIndex = 4;
 			this->btn_divOper->Text = L"/";
 			this->btn_divOper->UseVisualStyleBackColor = true;
-			this->btn_divOper->Click += gcnew System::EventHandler(this, &MyForm::button14_Click);
+			this->btn_divOper->Click += gcnew System::EventHandler(this, &MyForm::EnterOperator);
 			// 
 			// btn03
 			// 
@@ -363,7 +365,7 @@ namespace SimpleCalculator01 {
 			this->btn_period->TabIndex = 5;
 			this->btn_period->Text = L".";
 			this->btn_period->UseVisualStyleBackColor = true;
-			this->btn_period->Click += gcnew System::EventHandler(this, &MyForm::button22_Click);
+			this->btn_period->Click += gcnew System::EventHandler(this, &MyForm::btn_period_Click);
 			// 
 			// MyForm
 			// 
@@ -396,7 +398,6 @@ namespace SimpleCalculator01 {
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Simple Calculator";
-			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -411,6 +412,7 @@ namespace SimpleCalculator01 {
 	}
 
 private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) {
+	
 	Button^ Numbers = safe_cast<Button^>(sender);
 
 	if (textDisplay01->Text == "0")
@@ -420,6 +422,20 @@ private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) 
 	else
 	{
 		textDisplay01->Text += Numbers->Text;
+	}
+}
+private: System::Void EnterOperator(System::Object^ sender, System::EventArgs^ e) {
+
+	Button^ Operators = safe_cast<Button^>(sender);
+
+	firstNumber = Double::Parse(textDisplay01->Text);
+	textDisplay01->Text = "";
+	operators = Operators->Text;
+}
+private: System::Void btn_period_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (!textDisplay01->Text->Contains("."))
+	{
+		textDisplay01->Text += ".";
 	}
 }
 };
