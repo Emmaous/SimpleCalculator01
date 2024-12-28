@@ -475,7 +475,7 @@ private: System::Void btn_clear_Click(System::Object^ sender, System::EventArgs^
 }
 private: System::Void btn_sign_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	if (!textDisplay01->Text->Contains("-"))
+	if (textDisplay01->Text->Contains("-"))
 	{
 		textDisplay01->Text = textDisplay01->Text->Remove(0, 1);
 	}
