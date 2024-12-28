@@ -411,13 +411,12 @@ namespace SimpleCalculator01 {
 		}
 #pragma endregion
 
-		//declare variables
+		//declaring variables to handle numbers and operators
 		double firstNumber, secondNumber, result;
 		String^ operators;
 
-	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
 
+		// funtion to handle number entry
 private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) {
 	
 	Button^ Numbers = safe_cast<Button^>(sender);
@@ -431,14 +430,18 @@ private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) 
 		textDisplay01->Text += Numbers->Text;
 	}
 }
+
+	   // funtion to handle operator buttons
 private: System::Void EnterOperator(System::Object^ sender, System::EventArgs^ e) {
 
 	Button^ Operators = safe_cast<Button^>(sender);
 
 	firstNumber = Double::Parse(textDisplay01->Text);
-	textDisplay01->Text = "";
+	textDisplay01->Text = "0";
 	operators = Operators->Text;
 }
+
+	   //function to handle period button
 private: System::Void btn_period_Click(System::Object^ sender, System::EventArgs^ e) {
 	
 	if (!textDisplay01->Text->Contains("."))
@@ -446,10 +449,13 @@ private: System::Void btn_period_Click(System::Object^ sender, System::EventArgs
 		textDisplay01->Text += ".";
 	}
 }
+
+	   // funtion to handle equals to button and arithmetic operations
 private: System::Void btn_equals_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	secondNumber = Double::Parse(textDisplay01->Text);
 
+	// logic to handle arithmetic operations
 	if (operators == "+")
 	{
 		result = firstNumber + secondNumber;
@@ -467,12 +473,17 @@ private: System::Void btn_equals_Click(System::Object^ sender, System::EventArgs
 		result = firstNumber / secondNumber;
 	}
 
+	//display result of the operation
 	textDisplay01->Text = System::Convert::ToString(result);
 }
+
+	   // funtion to handle clear button
 private: System::Void btn_clear_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	textDisplay01->Text = "0";
 }
+
+// funtion to handle sign button
 private: System::Void btn_sign_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	if (textDisplay01->Text->Contains("-"))
@@ -484,6 +495,8 @@ private: System::Void btn_sign_Click(System::Object^ sender, System::EventArgs^ 
 		textDisplay01->Text = "-" + textDisplay01->Text;
 	}
 }
+
+	   // funtion to handle clear entry button
 private: System::Void btn_CE_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	if (textDisplay01->Text->Length > 0)
