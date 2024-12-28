@@ -39,10 +39,11 @@ namespace SimpleCalculator01 {
 
 	private: System::Windows::Forms::Button^ btn_clear;
 	private: System::Windows::Forms::Button^ btn_plusOper;
+	private: System::Windows::Forms::Button^ btn_sign;
 	protected:
 
 
-	private: System::Windows::Forms::Button^ btn_C;
+
 
 	private: System::Windows::Forms::Button^ btn_CE;
 
@@ -113,7 +114,7 @@ namespace SimpleCalculator01 {
 			this->textDisplay01 = (gcnew System::Windows::Forms::TextBox());
 			this->btn_clear = (gcnew System::Windows::Forms::Button());
 			this->btn_plusOper = (gcnew System::Windows::Forms::Button());
-			this->btn_C = (gcnew System::Windows::Forms::Button());
+			this->btn_sign = (gcnew System::Windows::Forms::Button());
 			this->btn_CE = (gcnew System::Windows::Forms::Button());
 			this->btn07 = (gcnew System::Windows::Forms::Button());
 			this->btn_minusOper = (gcnew System::Windows::Forms::Button());
@@ -142,6 +143,8 @@ namespace SimpleCalculator01 {
 			this->textDisplay01->ReadOnly = true;
 			this->textDisplay01->Size = System::Drawing::Size(390, 83);
 			this->textDisplay01->TabIndex = 0;
+			this->textDisplay01->Text = L"0";
+			this->textDisplay01->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
 			// 
 			// btn_clear
 			// 
@@ -153,6 +156,7 @@ namespace SimpleCalculator01 {
 			this->btn_clear->TabIndex = 1;
 			this->btn_clear->Text = L"Clear";
 			this->btn_clear->UseVisualStyleBackColor = true;
+			this->btn_clear->Click += gcnew System::EventHandler(this, &MyForm::btn_clear_Click);
 			// 
 			// btn_plusOper
 			// 
@@ -166,16 +170,17 @@ namespace SimpleCalculator01 {
 			this->btn_plusOper->UseVisualStyleBackColor = true;
 			this->btn_plusOper->Click += gcnew System::EventHandler(this, &MyForm::EnterOperator);
 			// 
-			// btn_C
+			// btn_sign
 			// 
-			this->btn_C->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btn_sign->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_C->Location = System::Drawing::Point(215, 113);
-			this->btn_C->Name = L"btn_C";
-			this->btn_C->Size = System::Drawing::Size(95, 52);
-			this->btn_C->TabIndex = 5;
-			this->btn_C->Text = L"C";
-			this->btn_C->UseVisualStyleBackColor = true;
+			this->btn_sign->Location = System::Drawing::Point(215, 113);
+			this->btn_sign->Name = L"btn_sign";
+			this->btn_sign->Size = System::Drawing::Size(95, 52);
+			this->btn_sign->TabIndex = 5;
+			this->btn_sign->Text = L"+/-";
+			this->btn_sign->UseVisualStyleBackColor = true;
+			this->btn_sign->Click += gcnew System::EventHandler(this, &MyForm::btn_sign_Click);
 			// 
 			// btn_CE
 			// 
@@ -187,6 +192,7 @@ namespace SimpleCalculator01 {
 			this->btn_CE->TabIndex = 6;
 			this->btn_CE->Text = L"CE";
 			this->btn_CE->UseVisualStyleBackColor = true;
+			this->btn_CE->Click += gcnew System::EventHandler(this, &MyForm::btn_CE_Click);
 			// 
 			// btn07
 			// 
@@ -354,6 +360,7 @@ namespace SimpleCalculator01 {
 			this->btn_equals->TabIndex = 4;
 			this->btn_equals->Text = L"=";
 			this->btn_equals->UseVisualStyleBackColor = true;
+			this->btn_equals->Click += gcnew System::EventHandler(this, &MyForm::btn_equals_Click);
 			// 
 			// btn_period
 			// 
@@ -381,7 +388,7 @@ namespace SimpleCalculator01 {
 			this->Controls->Add(this->btn06);
 			this->Controls->Add(this->btn09);
 			this->Controls->Add(this->btn_equals);
-			this->Controls->Add(this->btn_C);
+			this->Controls->Add(this->btn_sign);
 			this->Controls->Add(this->btn_divOper);
 			this->Controls->Add(this->btn_multiOper);
 			this->Controls->Add(this->btn_minusOper);
@@ -433,9 +440,55 @@ private: System::Void EnterOperator(System::Object^ sender, System::EventArgs^ e
 	operators = Operators->Text;
 }
 private: System::Void btn_period_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 	if (!textDisplay01->Text->Contains("."))
 	{
 		textDisplay01->Text += ".";
+	}
+}
+private: System::Void btn_equals_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	secondNumber = Double::Parse(textDisplay01->Text);
+
+	if (operators == "+")
+	{
+		result = firstNumber + secondNumber;
+	}
+	else if (operators == "-")
+	{
+		result = firstNumber - secondNumber;
+	}
+	else if (operators == "*") 
+	{
+		result = firstNumber * secondNumber;
+	}
+	else if (operators == "/")
+	{
+		result = firstNumber / secondNumber;
+	}
+
+	textDisplay01->Text = System::Convert::ToString(result);
+}
+private: System::Void btn_clear_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	textDisplay01->Text = "0";
+}
+private: System::Void btn_sign_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	if (!textDisplay01->Text->Contains("-"))
+	{
+		textDisplay01->Text = textDisplay01->Text->Remove(0, 1);
+	}
+	else
+	{
+		textDisplay01->Text = "-" + textDisplay01->Text;
+	}
+}
+private: System::Void btn_CE_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	if (textDisplay01->Text->Length > 0)
+	{
+		textDisplay01->Text = textDisplay01->Text->Remove(textDisplay01->Text->Length - 1, 1);
 	}
 }
 };
