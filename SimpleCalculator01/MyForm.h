@@ -198,6 +198,7 @@ namespace SimpleCalculator01 {
 			this->btn07->TabIndex = 1;
 			this->btn07->Text = L"7";
 			this->btn07->UseVisualStyleBackColor = true;
+			this->btn07->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn_minusOper
 			// 
@@ -220,7 +221,7 @@ namespace SimpleCalculator01 {
 			this->btn09->TabIndex = 5;
 			this->btn09->Text = L"9";
 			this->btn09->UseVisualStyleBackColor = true;
-			this->btn09->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
+			this->btn09->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn08
 			// 
@@ -232,7 +233,7 @@ namespace SimpleCalculator01 {
 			this->btn08->TabIndex = 6;
 			this->btn08->Text = L"8";
 			this->btn08->UseVisualStyleBackColor = true;
-			this->btn08->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
+			this->btn08->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn04
 			// 
@@ -244,6 +245,7 @@ namespace SimpleCalculator01 {
 			this->btn04->TabIndex = 1;
 			this->btn04->Text = L"4";
 			this->btn04->UseVisualStyleBackColor = true;
+			this->btn04->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn_multiOper
 			// 
@@ -266,6 +268,7 @@ namespace SimpleCalculator01 {
 			this->btn06->TabIndex = 5;
 			this->btn06->Text = L"6";
 			this->btn06->UseVisualStyleBackColor = true;
+			this->btn06->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn05
 			// 
@@ -277,6 +280,7 @@ namespace SimpleCalculator01 {
 			this->btn05->TabIndex = 6;
 			this->btn05->Text = L"5";
 			this->btn05->UseVisualStyleBackColor = true;
+			this->btn05->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn01
 			// 
@@ -288,7 +292,7 @@ namespace SimpleCalculator01 {
 			this->btn01->TabIndex = 1;
 			this->btn01->Text = L"1";
 			this->btn01->UseVisualStyleBackColor = true;
-			this->btn01->Click += gcnew System::EventHandler(this, &MyForm::btn01_Click);
+			this->btn01->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn_divOper
 			// 
@@ -312,7 +316,7 @@ namespace SimpleCalculator01 {
 			this->btn03->TabIndex = 5;
 			this->btn03->Text = L"3";
 			this->btn03->UseVisualStyleBackColor = true;
-			this->btn03->Click += gcnew System::EventHandler(this, &MyForm::button15_Click);
+			this->btn03->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn02
 			// 
@@ -324,6 +328,7 @@ namespace SimpleCalculator01 {
 			this->btn02->TabIndex = 6;
 			this->btn02->Text = L"2";
 			this->btn02->UseVisualStyleBackColor = true;
+			this->btn02->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn_zero
 			// 
@@ -335,7 +340,7 @@ namespace SimpleCalculator01 {
 			this->btn_zero->TabIndex = 1;
 			this->btn_zero->Text = L"0";
 			this->btn_zero->UseVisualStyleBackColor = true;
-			this->btn_zero->Click += gcnew System::EventHandler(this, &MyForm::button18_Click);
+			this->btn_zero->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn_equals
 			// 
@@ -397,8 +402,25 @@ namespace SimpleCalculator01 {
 
 		}
 #pragma endregion
+
+		//declare variables
+		double firstNumber, secondNumber, result;
+		String^ operators;
+
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 
+private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) {
+	Button^ Numbers = safe_cast<Button^>(sender);
+
+	if (textDisplay01->Text == "0")
+	{
+		textDisplay01->Text = Numbers->Text;
+	}
+	else
+	{
+		textDisplay01->Text += Numbers->Text;
+	}
+}
 };
 }
