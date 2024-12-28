@@ -490,6 +490,11 @@ private: System::Void btn_CE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		textDisplay01->Text = textDisplay01->Text->Remove(textDisplay01->Text->Length - 1, 1);
 	}
+
+	if (textDisplay01->Text == "")
+	{
+		textDisplay01->Text = "0";
+	}
 }
 };
 }
