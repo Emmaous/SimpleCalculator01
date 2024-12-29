@@ -111,6 +111,7 @@ namespace SimpleCalculator01 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->textDisplay01 = (gcnew System::Windows::Forms::TextBox());
 			this->btn_clear = (gcnew System::Windows::Forms::Button());
 			this->btn_plusOper = (gcnew System::Windows::Forms::Button());
@@ -148,236 +149,275 @@ namespace SimpleCalculator01 {
 			// 
 			// btn_clear
 			// 
+			this->btn_clear->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn_clear->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn_clear->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn_clear->Location = System::Drawing::Point(12, 113);
 			this->btn_clear->Name = L"btn_clear";
 			this->btn_clear->Size = System::Drawing::Size(96, 52);
 			this->btn_clear->TabIndex = 1;
 			this->btn_clear->Text = L"Clear";
-			this->btn_clear->UseVisualStyleBackColor = true;
+			this->btn_clear->UseVisualStyleBackColor = false;
 			this->btn_clear->Click += gcnew System::EventHandler(this, &MyForm::btn_clear_Click);
 			// 
 			// btn_plusOper
 			// 
+			this->btn_plusOper->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn_plusOper->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn_plusOper->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn_plusOper->Location = System::Drawing::Point(316, 113);
 			this->btn_plusOper->Name = L"btn_plusOper";
 			this->btn_plusOper->Size = System::Drawing::Size(86, 52);
 			this->btn_plusOper->TabIndex = 4;
 			this->btn_plusOper->Text = L"+";
-			this->btn_plusOper->UseVisualStyleBackColor = true;
+			this->btn_plusOper->UseVisualStyleBackColor = false;
 			this->btn_plusOper->Click += gcnew System::EventHandler(this, &MyForm::EnterOperator);
 			// 
 			// btn_sign
 			// 
+			this->btn_sign->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn_sign->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn_sign->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn_sign->Location = System::Drawing::Point(215, 113);
 			this->btn_sign->Name = L"btn_sign";
 			this->btn_sign->Size = System::Drawing::Size(95, 52);
 			this->btn_sign->TabIndex = 5;
 			this->btn_sign->Text = L"+/-";
-			this->btn_sign->UseVisualStyleBackColor = true;
+			this->btn_sign->UseVisualStyleBackColor = false;
 			this->btn_sign->Click += gcnew System::EventHandler(this, &MyForm::btn_sign_Click);
 			// 
 			// btn_CE
 			// 
+			this->btn_CE->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn_CE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn_CE->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn_CE->Location = System::Drawing::Point(114, 113);
 			this->btn_CE->Name = L"btn_CE";
 			this->btn_CE->Size = System::Drawing::Size(95, 52);
 			this->btn_CE->TabIndex = 6;
 			this->btn_CE->Text = L"CE";
-			this->btn_CE->UseVisualStyleBackColor = true;
+			this->btn_CE->UseVisualStyleBackColor = false;
 			this->btn_CE->Click += gcnew System::EventHandler(this, &MyForm::btn_CE_Click);
 			// 
 			// btn07
 			// 
+			this->btn07->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn07->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn07->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn07->Location = System::Drawing::Point(12, 171);
 			this->btn07->Name = L"btn07";
 			this->btn07->Size = System::Drawing::Size(96, 52);
 			this->btn07->TabIndex = 1;
 			this->btn07->Text = L"7";
-			this->btn07->UseVisualStyleBackColor = true;
+			this->btn07->UseVisualStyleBackColor = false;
 			this->btn07->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn_minusOper
 			// 
+			this->btn_minusOper->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn_minusOper->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn_minusOper->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn_minusOper->Location = System::Drawing::Point(316, 171);
 			this->btn_minusOper->Name = L"btn_minusOper";
 			this->btn_minusOper->Size = System::Drawing::Size(86, 52);
 			this->btn_minusOper->TabIndex = 4;
 			this->btn_minusOper->Text = L"-";
-			this->btn_minusOper->UseVisualStyleBackColor = true;
+			this->btn_minusOper->UseVisualStyleBackColor = false;
 			this->btn_minusOper->Click += gcnew System::EventHandler(this, &MyForm::EnterOperator);
 			// 
 			// btn09
 			// 
+			this->btn09->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn09->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn09->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn09->Location = System::Drawing::Point(215, 171);
 			this->btn09->Name = L"btn09";
 			this->btn09->Size = System::Drawing::Size(95, 52);
 			this->btn09->TabIndex = 5;
 			this->btn09->Text = L"9";
-			this->btn09->UseVisualStyleBackColor = true;
+			this->btn09->UseVisualStyleBackColor = false;
 			this->btn09->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn08
 			// 
+			this->btn08->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn08->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn08->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn08->Location = System::Drawing::Point(114, 171);
 			this->btn08->Name = L"btn08";
 			this->btn08->Size = System::Drawing::Size(95, 52);
 			this->btn08->TabIndex = 6;
 			this->btn08->Text = L"8";
-			this->btn08->UseVisualStyleBackColor = true;
+			this->btn08->UseVisualStyleBackColor = false;
 			this->btn08->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn04
 			// 
+			this->btn04->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn04->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn04->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn04->Location = System::Drawing::Point(12, 229);
 			this->btn04->Name = L"btn04";
 			this->btn04->Size = System::Drawing::Size(96, 52);
 			this->btn04->TabIndex = 1;
 			this->btn04->Text = L"4";
-			this->btn04->UseVisualStyleBackColor = true;
+			this->btn04->UseVisualStyleBackColor = false;
 			this->btn04->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn_multiOper
 			// 
+			this->btn_multiOper->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn_multiOper->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn_multiOper->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn_multiOper->Location = System::Drawing::Point(316, 229);
 			this->btn_multiOper->Name = L"btn_multiOper";
 			this->btn_multiOper->Size = System::Drawing::Size(86, 52);
 			this->btn_multiOper->TabIndex = 4;
 			this->btn_multiOper->Text = L"*";
-			this->btn_multiOper->UseVisualStyleBackColor = true;
+			this->btn_multiOper->UseVisualStyleBackColor = false;
 			this->btn_multiOper->Click += gcnew System::EventHandler(this, &MyForm::EnterOperator);
 			// 
 			// btn06
 			// 
+			this->btn06->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn06->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn06->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn06->Location = System::Drawing::Point(215, 229);
 			this->btn06->Name = L"btn06";
 			this->btn06->Size = System::Drawing::Size(95, 52);
 			this->btn06->TabIndex = 5;
 			this->btn06->Text = L"6";
-			this->btn06->UseVisualStyleBackColor = true;
+			this->btn06->UseVisualStyleBackColor = false;
 			this->btn06->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn05
 			// 
+			this->btn05->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn05->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn05->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn05->Location = System::Drawing::Point(114, 229);
 			this->btn05->Name = L"btn05";
 			this->btn05->Size = System::Drawing::Size(95, 52);
 			this->btn05->TabIndex = 6;
 			this->btn05->Text = L"5";
-			this->btn05->UseVisualStyleBackColor = true;
+			this->btn05->UseVisualStyleBackColor = false;
 			this->btn05->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn01
 			// 
+			this->btn01->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn01->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn01->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn01->Location = System::Drawing::Point(12, 287);
 			this->btn01->Name = L"btn01";
 			this->btn01->Size = System::Drawing::Size(96, 52);
 			this->btn01->TabIndex = 1;
 			this->btn01->Text = L"1";
-			this->btn01->UseVisualStyleBackColor = true;
+			this->btn01->UseVisualStyleBackColor = false;
 			this->btn01->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn_divOper
 			// 
+			this->btn_divOper->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn_divOper->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn_divOper->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn_divOper->Location = System::Drawing::Point(316, 287);
 			this->btn_divOper->Name = L"btn_divOper";
 			this->btn_divOper->Size = System::Drawing::Size(86, 52);
 			this->btn_divOper->TabIndex = 4;
 			this->btn_divOper->Text = L"/";
-			this->btn_divOper->UseVisualStyleBackColor = true;
+			this->btn_divOper->UseVisualStyleBackColor = false;
 			this->btn_divOper->Click += gcnew System::EventHandler(this, &MyForm::EnterOperator);
 			// 
 			// btn03
 			// 
+			this->btn03->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn03->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn03->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn03->Location = System::Drawing::Point(215, 287);
 			this->btn03->Name = L"btn03";
 			this->btn03->Size = System::Drawing::Size(95, 52);
 			this->btn03->TabIndex = 5;
 			this->btn03->Text = L"3";
-			this->btn03->UseVisualStyleBackColor = true;
+			this->btn03->UseVisualStyleBackColor = false;
 			this->btn03->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn02
 			// 
+			this->btn02->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn02->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn02->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn02->Location = System::Drawing::Point(114, 287);
 			this->btn02->Name = L"btn02";
 			this->btn02->Size = System::Drawing::Size(95, 52);
 			this->btn02->TabIndex = 6;
 			this->btn02->Text = L"2";
-			this->btn02->UseVisualStyleBackColor = true;
+			this->btn02->UseVisualStyleBackColor = false;
 			this->btn02->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn_zero
 			// 
+			this->btn_zero->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn_zero->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn_zero->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn_zero->Location = System::Drawing::Point(12, 356);
 			this->btn_zero->Name = L"btn_zero";
 			this->btn_zero->Size = System::Drawing::Size(96, 69);
 			this->btn_zero->TabIndex = 1;
 			this->btn_zero->Text = L"0";
-			this->btn_zero->UseVisualStyleBackColor = true;
+			this->btn_zero->UseVisualStyleBackColor = false;
 			this->btn_zero->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
 			// btn_equals
 			// 
+			this->btn_equals->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn_equals->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn_equals->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn_equals->Location = System::Drawing::Point(215, 356);
 			this->btn_equals->Name = L"btn_equals";
 			this->btn_equals->Size = System::Drawing::Size(187, 69);
 			this->btn_equals->TabIndex = 4;
 			this->btn_equals->Text = L"=";
-			this->btn_equals->UseVisualStyleBackColor = true;
+			this->btn_equals->UseVisualStyleBackColor = false;
 			this->btn_equals->Click += gcnew System::EventHandler(this, &MyForm::btn_equals_Click);
 			// 
 			// btn_period
 			// 
+			this->btn_period->BackColor = System::Drawing::Color::SaddleBrown;
 			this->btn_period->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->btn_period->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btn_period->Location = System::Drawing::Point(114, 356);
 			this->btn_period->Name = L"btn_period";
 			this->btn_period->Size = System::Drawing::Size(95, 69);
 			this->btn_period->TabIndex = 5;
 			this->btn_period->Text = L".";
-			this->btn_period->UseVisualStyleBackColor = true;
+			this->btn_period->UseVisualStyleBackColor = false;
 			this->btn_period->Click += gcnew System::EventHandler(this, &MyForm::btn_period_Click);
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(414, 437);
 			this->Controls->Add(this->btn02);
 			this->Controls->Add(this->btn05);
@@ -399,6 +439,7 @@ namespace SimpleCalculator01 {
 			this->Controls->Add(this->btn07);
 			this->Controls->Add(this->btn_clear);
 			this->Controls->Add(this->textDisplay01);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximumSize = System::Drawing::Size(430, 500);
 			this->MinimizeBox = false;
 			this->MinimumSize = System::Drawing::Size(400, 450);
